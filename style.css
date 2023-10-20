@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --bg-color: hsl(327, 77%, 14%);
+    --bg-gradient: linear-gradient(225deg, #3e0826 0%, #281733 50%, #092233 100%);
+    --txt-color: hsla(0, 0%, 0%, 0.932);
+    --txt-color-hover: hsl(278, 82%, 25%);
+    --bg-timer-controls: rgba(255, 255, 255, 0.925);
+    --bg-cards: hsla(0, 0%, 100%, 0.74);
+    --bg-cards-hover: hsl(0, 0%, 100%);
+    --toggle-color: rgba(238, 237, 237, 0.856);
+
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+#toggle-mode {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    line-height: 0;
+    color: var(--toggle-color);
+}
+
+#toggle-mode i {
+    font-size: 3rem;
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+html.light {
+    --bg-color: hsl(210, 95%, 77%);
+    --bg-gradient: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    --toggle-color: rgba(56, 55, 55, 0.856);
+}
+
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+    display: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-gradient);
+
+    font-family: 'Tilt Neon', sans-serif;
+
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    font-size: 6rem;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.timer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg-timer-controls);
+    border-radius: 2rem;
+    opacity: 90%;
+    padding: 0 5rem;
+    box-shadow: 0 .4rem .6rem 0 rgba(0, 0, 0, 0.247);
+
+    font-size: 7rem;
+    font-weight: bold;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 4.8rem;
+}
+
+button:hover {
+    color: var(--txt-color-hover);
+    opacity: 90%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.cards button {
+    background-color: var(--bg-cards);
+    opacity: 70%;
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 .4rem .6rem 0 rgba(0, 0, 0, 0.247);
+
+    font-size: 6rem;
+}
+
+.cards button:hover {
+    background-color: var(--bg-cards-hover);
+    opacity: 90%;
+}
+
+
+/* controls */
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+    display: none;
+}

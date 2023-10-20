@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Temporizador estilo Pomodoro com som ambiente">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Focus Timer 2.0</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="./src/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <button id="toggle-mode">
+        <span class="sr-only">Ativar Light Mode</span>
+        <i class="ph-bold ph-sun"></i>
+        <i class="ph-bold ph-moon"></i>
+    </button>
+
+    <div class="app">
+        <div class="timer-section">
+            <section id="timer">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+
+            <section class="controls">
+                <button data-action="toggleRunning" class="ph ph-play-circle"></button>
+                <button data-action="toggleRunning" class="ph ph-pause-circle"></button>
+                <button data-action="reset" class="ph ph-stop-circle"></button>
+                <button data-action="addMinutes" class="ph ph-plus-circle"></button>
+                <button data-action="removeMinutes" class="ph ph-minus-circle"></button>
+            </section>
+        </div>
+
+        <section class="cards">
+            <button id="forest" class="ph ph-tree"></button>
+            <button id="cloud" class="ph ph-cloud-rain"></button>
+            <button id="coffee" class="ph ph-coffee"></button>
+            <button id="fire" class="ph ph-campfire"></button>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
